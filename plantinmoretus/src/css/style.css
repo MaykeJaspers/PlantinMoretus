@@ -1,0 +1,187 @@
+body{
+  background-color: #0D0D0D;
+}
+
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:#0D0D0D; 
+  padding: 1rem 2rem;
+  color: #fff; 
+  font-family: 'Arial', sans-serif;
+}
+
+
+.nav__logo img {
+  max-height: 60px;
+}
+
+
+.nav__menu {
+  display: flex;
+  align-items: center;
+}
+
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__item {
+  margin-left: 2rem;
+}
+
+.nav__item a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  transition: color 0.3s ease;
+}
+
+.nav__item a:hover {
+  color: #c0392b; 
+}
+
+
+.nav__language-dropdown {
+  margin-left: 2rem;
+}
+
+.nav__language-dropdown select {
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.3rem 1rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav__language-dropdown select:hover {
+  border-color: #c0392b; 
+  color: #c0392b;
+}
+
+
+.nav__language-dropdown select option {
+  background: #0D0D0D; 
+  color: #fff;
+}
+
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav__menu {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .nav__item {
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+
+  .nav__language-dropdown {
+    margin-top: 1rem;
+    align-self: flex-start;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header__content {
+  max-width: 50%;
+  text-align: left;
+}
+
+.header__title {
+  margin: 0;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #e3d9c4;
+}
+
+.header__title span:last-child {
+  display: block;
+  font-size: 3rem;
+  color: #a3322c;
+}
+
+.header__subtitle {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #e3d9c4;
+  margin: 1rem 0;
+}
+
+.header__cta {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #a3322c;
+  color: #fff;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.header__cta:hover {
+  background-color: #c0392b;
+}
+
+.header__image {
+  max-width: 45%;
+  text-align: center;
+  background-image: url(/src/images/passer.png);
+  background-position: center;
+  background-size: 25rem;
+  background-repeat: no-repeat;
+}
+
+
+.header__image img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+.hidden{
+  display: none;
+}
