@@ -1,13 +1,61 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plantin Moretus Museum</title>
+  <script type="module" src="/src/main.js"></script>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="nav__logo"><a href="/"><img src="./src/images/logo.svg" alt="Plantin Moretus Museum Logo"></a></div>
+
+
+
+    <div class="nav__menu">
+      <ul class="nav__list" id="nav__list">
+        <li class="nav__item"><a href="/#">Home</a></li>
+        <li class="nav__item"><a href="/#">About Plantin</a></li>
+        <li class="nav__item"><a href="/#">Key innovation</a></li>
+        <li class="nav__item"><a href="/#">Buy Tickets</a></li>
+      </ul>
+
+      <div class="nav__language-dropdown">
+        <label for="language-select" class="hidden">Language</label>
+        <select id="language-select" aria-label="Select language">
+          <option value="en" selected>English</option>
+          <option value="nl">Dutch</option>
+          <option value="fr">French</option>
+        </select>
+      </div>
+    </div>
+
+  </nav>
+
+  <header class="header">
+    <div class="header__image">
+      <img src="./src/images/header.png" alt="portrait plantin">
+    </div>
+    <div class="header__content">
+      <h1 class="header__title">
+        <span>CHRISTOPH</span>
+        <span>Plantin</span>
+      </h1>
+
+      <p class="header__subtitle">
+        labore et constantia</p>
+      <a href="#" class="header__cta">Explore the life of a printing pioneer</a>
+    </div>
+
+  </header>
+  <main>
+  </main>
+
+
+</body>
+
 </html>
