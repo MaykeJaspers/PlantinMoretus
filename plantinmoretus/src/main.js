@@ -1,3 +1,4 @@
-import './css/style.css'
-import './css/reset.css'
+import '../src/css/style.css'
+import '../src/css/reset.css'
+import '../src/js/cursor'
 

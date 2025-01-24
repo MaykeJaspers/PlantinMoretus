@@ -112,44 +112,107 @@ a {
   color: inherit;
 }
 
+.header__container {
+  display: grid;
+  justify-content: center;
+  align-content: space-between;
+  width: 100%;
+  position: relative;
+  padding-bottom: 10rem;
+}
 
-.header {
+
+.header__image {
+  width: 100%;
+  height: auto; /* Ensure the height scales proportionally */
   display: flex;
-  justify-content: space-between;
+  align-content: center;
+  justify-content: center;
   align-items: center;
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  position: relative;
+}
+
+.header__passer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/passer.png'); /* Replace with gold ornament image */
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease-out;
+}
+
+.header__plantin {
+  position: absolute;
+  height: 40rem;
+  z-index: 2;
+
+}
+
+.header__tag{
+  text-align: right;
 }
 
 .header__content {
-  max-width: 50%;
-  text-align: left;
+  display: flex;
 }
 
-.header__title {
-  margin: 0;
-  font-size: 4rem;
+.header__bigger {
+  max-width: 100%;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 15rem;
   font-weight: bold;
   color: #e3d9c4;
+  line-height: 1;
+
+}
+
+.header__smaller {
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 13rem;
+  font-weight: bold;
+  color: #e3d9c4;
+  line-height: 1;
+}
+
+
+.header__span{
+  color:#a3322c
+}
+
+.header__star img{
+  width: 15rem;
+  height: auto;
+  margin: 0;
 }
 
 .header__title span:last-child {
   display: block;
-  font-size: 3rem;
+  font-size: 5rem;
   color: #a3322c;
 }
 
 .header__subtitle {
-  font-size: 1.5rem;
+  font-family: 'Dancing Script';
+  font-size: 3rem;
   font-style: italic;
-  color: #e3d9c4;
+  color: #EAC066;
   margin: 1rem 0;
+  padding-right: 1rem;
 }
 
 .header__cta {
   display: inline-block;
   margin-top: 1.5rem;
+  margin-right: 1rem;
   padding: 0.8rem 1.5rem;
   background-color: #a3322c;
   color: #fff;
@@ -164,24 +227,76 @@ a {
   background-color: #c0392b;
 }
 
-.header__image {
-  max-width: 45%;
-  text-align: center;
-  background-image: url(/src/images/passer.png);
-  background-position: center;
-  background-size: 25rem;
-  background-repeat: no-repeat;
+
+.timeline__container {
+  position: relative;
+  width: 80%;
+  margin: 2rem auto;
+}
+
+.timeline__container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: #f0b400;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.timeline__event {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2rem 0;
+  position: relative;
 }
 
 
-.header__image img {
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
+
+.timeline__image {
+  text-align: center;
+}
+
+.timeline__image img {
+    width: 20rem;
+    height: 20rem;
+    object-fit: cover;
+    border-radius: 8px;
+    text-align: center;
   border-radius: 8px;
 }
 
+.timeline__content {
+     color: white;
+     max-width: 20rem;
+     padding: 1rem;
+     border-radius: 8px;
+     position: relative;
+}
 
-.hidden{
-  display: none;
+.timeline__content h3 {
+  font-size: 2rem;
+  margin-top: 0;
+  color: #f0b400;
+}
+
+.timeline__content p {
+  line-height: 1.6;
+}
+
+.timeline__year {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+ transform: rotate(90°);
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.3rem 1rem;
+  border-radius: 4px;
+  transform: translate(-50%, -50%);
+  z-index: 2;
 }
