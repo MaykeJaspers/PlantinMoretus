@@ -292,7 +292,8 @@ a {
   position: absolute;
   top: 50%;
   left: 50%;
- transform: rotate(90°);
+  writing-mode: vertical-rl;
+  transform: rotate(90°);
   color: white;
   font-weight: bold;
   font-size: 1.2rem;
