@@ -1,31 +1,28 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<HTML lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plantin Moretus Museum</title>
-  <script type="module" src="/src/main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script type="module" src="./src/main.js"></script>
 </head>
 
 <body>
 
   <nav class="nav">
-    <div class="nav__logo"><a href="/"><img src="./src/images/logo.svg" alt="Plantin Moretus Museum Logo"></a></div>
-
-
-
+    <div class="nav__logo">
+      <a href="/"><img src="./src/images/logo.svg" alt="Plantin Moretus Museum Logo"></a>
+    </div>
     <div class="nav__menu">
       <ul class="nav__list" id="nav__list">
-        <li class="nav__item"><a href="/#">Home</a></li>
-        <li class="nav__item"><a href="/#">About Plantin</a></li>
-        <li class="nav__item"><a href="/#">Key innovation</a></li>
-        <li class="nav__item"><a href="/#">Buy Tickets</a></li>
+        <li class="nav__item"><a href="#">Home</a></li>
+        <li class="nav__item"><a href="#">About Plantin</a></li>
+        <li class="nav__item"><a href="#">Key Innovation</a></li>
+        <li class="nav__item"><a href="#">Buy Tickets</a></li>
       </ul>
-
       <div class="nav__language-dropdown">
-        <label for="language-select" class="hidden">Language</label>
         <select id="language-select" aria-label="Select language">
           <option value="en" selected>English</option>
           <option value="nl">Dutch</option>
@@ -33,28 +30,132 @@
         </select>
       </div>
     </div>
-
   </nav>
 
-  <header class="header">
-    <div class="header__image">
-      <img src="./src/images/header.png" alt="portrait plantin">
-    </div>
-    <div class="header__content">
-      <h1 class="header__title">
-        <span>CHRISTOPH</span>
-        <span>Plantin</span>
+  <header>
+    <section class="header__container">
+      <h1 class="header__bigger">
+        <span>CHR</span><span class="header__span">I</span><span>ST</span><span class="header__star"><img
+            src="./src/images/star.png" alt=""></span><span>PH</span>
       </h1>
+      <div class="header__content">
+        <div class="header__image">
+          <div class="header__passer"></div>
 
-      <p class="header__subtitle">
-        labore et constantia</p>
-      <a href="#" class="header__cta">Explore the life of a printing pioneer</a>
-    </div>
+          <img class="header__plantin" sizes="(max-width: 2040px) 100vw, 2040px"
+          srcset="
+          ../src/images/plantin190.webp 190w,
+          ../src/images/plantin692.webp 692w,
+          ../src/images/plantin1021.webp 1021w,
+          ../src/images/plantin1344.webp 1344w,
+          ../src/images/plantin1640.webp 1640w,
+          ../src/images/plantin1948.webp 1948w,
+          ../src/images/plantin2040.webp 2040w"
+          src="../src/images/plantin2040.webp" alt="plantin">
 
+        </div>
+        <div class="header__tag">
+          <h1 class="header__smaller">
+            <span>Pl</span><span class="header__span">a</span><span>ntin</span>
+          </h1>
+          <p class="header__subtitle">labore et constantia</p>
+          <a href="#" class="header__cta">Explore the life of a printing pioneer</a>
+        </div>
+      </div>
+    </section>
   </header>
-  <main>
-  </main>
 
+  <main>
+    <div class="timeline__container">
+      <!-- Event 1 -->
+      <div class="timeline__event">
+        <div class="timeline__content">
+          <h3>Humble Beginnings</h3>
+          <p>In the quiet village of Saint-Avertin near Tours, France, a boy named Christoph Plantin is born. Surrounded
+            by the lush countryside, little does anyone suspect that this boy will one day revolutionize the world of
+            printing. His early years are spent learning from the skilled artisans in the region, a subtle hint of the
+            craftsmanship that would define his life.</p>
+        </div>
+        <div class="timeline__image">
+          <img src="./src/images/SaintAvertin.png" alt="Humble Beginnings">
+        </div>
+        <div class="timeline__year">
+          <p>1520</p>
+        </div>
+      </div>
+
+      <!-- Event 2 -->
+      <div class="timeline__event">
+        <div class="timeline__image">
+          <img src="./src/images/JeanneRivière.png" alt="Apprentice's Path">
+        </div>
+        <div class="timeline__content">
+          <h3>The Apprentice's Path</h3>
+          <p>As a young man, Christoph begins his apprenticeship in bookbinding and leatherworking. Day by day, his
+            hands become skilled, his eyes sharp, and his mind disciplined. The long hours of meticulous work teach him
+            not only patience but also the value of precision—traits that will serve him well in the world of books and
+            printing.</p>
+        </div>
+        <div class="timeline__year">
+          <p>1530s</p>
+        </div>
+      </div>
+
+      <!-- Event 3 -->
+      <div class="timeline__event">
+        <div class="timeline__content">
+          <h3>Hearts and Ambitions</h3>
+          <p>Christoph marries Jeanne Rivière, a woman as steadfast as he is ambitious. Together, they form a
+            team—Jeanne’s unwavering support allows Christoph to focus on perfecting his craft and dreaming of a greater
+            future. Their bond is one of quiet determination, laying the foundation for the family legacy to come.</p>
+        </div>
+
+        <div class="timeline__image">
+          <img src="./src/images/JeanneRivière.png" alt="Hearts and Ambitions">
+        </div>
+
+        <div class="timeline__year">
+          <p>1540</p>
+        </div>
+      </div>
+
+      <!-- Event 4 -->
+      <div class="timeline__event">
+        <div class="timeline__image">
+          <img src="./src/images/horse.png" alt="City of Opportunity">
+        </div>
+        <div class="timeline__content">
+          <h3>A City of Opportunity</h3>
+          <p>With his skills refined, Christoph heads to Paris—the beating heart of intellectual Europe. In this city of
+            ideas, he deepens his understanding of the power of books to shape minds and societies. Each book he binds,
+            each page he handles, stokes his dream of one day producing works of his own.</p>
+        </div>
+
+        <div class="timeline__year">
+          <p>1548</p>
+        </div>
+      </div>
+
+
+      <!-- Event 5 -->
+      <div class="timeline__event">
+
+        <div class="timeline__content">
+          <h3 class="">A new beginning</h3>
+          <p>With his skills refined, Christoph heads to Paris—the beating heart of intellectual Europe. In this city of
+            ideas, he deepens his understanding of the power of books to shape minds and societies. Each book he binds,
+            each page he handles, stokes his dream of one day producing works of his own.</p>
+        </div>
+        <div class="timeline__image">
+          <img src="./src/images/antwerpen.png" alt="Hearts and Ambitions">
+        </div>
+        <div class="timeline__year">
+          <p>1550</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
 
 </body>
 
