@@ -769,3 +769,74 @@ a {
   font-family: "EB Garamond", serif;
   font-size: 1rem;
 }
+
+
+.business__container{
+  padding: 2rem;
+}
+
+
+
+.business__card{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.business__time{
+  color: #EAC066;
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: "EB Garamond", serif;
+}
+
+
+.business__subtitle{
+  color: #F9F8EF;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: "EB Garamond", serif;
+}
+
+.business__text{
+  color: #F9F8EF;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "EB Garamond", serif;
+}
+
+.business__image img{
+  width: 30rem;
+}
+
+.business__text{
+  width: 50%;;
+}
+
+.business__btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+}
+
+.business__btn--img{
+  width: 3rem;
+}
+
+.business__btn--text{
+  color: #F6F0C8;
+  font-family: "EB Garamond", serif;
+  font-size: 1rem;
+}
+
+.business{
+width: 100%;
+padding: 2rem 0;
+}
+
+.business__link{
+  border: none;
+}
