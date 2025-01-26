@@ -954,3 +954,29 @@ footer {
 .social__icons a:hover {
   color: #ffd700;
 }
+
+
+.garamond__container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.garamond__title{
+  text-align: left;
+  color: #ede3d7;
+  font-size: 5rem;
+  font-weight: 700;
+  font-family: "EB Garamond", serif;
+}
+
+.garamond__image img{
+  width: 30rem;
+  height: auto;
+}
+
+.garamond__content{
+  text-align: left;
+  width: 30%;
+  color: #e3d9c4;
+}
