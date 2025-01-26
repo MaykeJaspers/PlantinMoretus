@@ -1,3 +1,5 @@
+
+
 p{
   font-family: "EB Garamond", serif;
 }
@@ -12,6 +14,11 @@ h2{
   font-size: 3rem;
   font-weight: 700;
   color: #C4B8AA;
+}
+
+.background{
+  background-color: #2C2C2C;
+  border-color: rgb(0, 0, 0);
 }
 
 .nav {
@@ -540,3 +547,79 @@ a {
   line-height: 1.6;
   color: #e3d9c4;
 }
+
+
+
+/* Section container */
+.info {
+  padding: 2rem;
+  position: relative;
+  max-width: 100%;
+}
+
+
+.info__container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info__image img{
+  width: 20rem;
+  height: auto;
+}
+
+.info__speech{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: #0D0D0D;
+  background-color: #EAC066;
+  height: 5rem;
+  border-radius: .6rem;
+}
+
+
+
+.info__title {
+  text-align: center;
+  font-size: 3rem;
+  color: #cebf6b;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 3rem;
+}
+
+.info__title span {
+  display: inline-block;
+}
+
+
+
+
+
+.info__listen {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: #c3b393;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+.info__listen--svg{
+  fill: #c3b393;
+  width: 2rem;
+}
+
+.info__listen img {
+  width: 20px;
+  height: 20px;
+}
+
+
+
