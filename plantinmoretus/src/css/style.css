@@ -599,7 +599,7 @@ a {
 
 
 .info__span:nth-child(1) {
-  top: 0rem; /* First card stays at default position */
+  top: 0rem;
 }
 
 .info__span:nth-child(2) {
@@ -698,7 +698,74 @@ a {
   padding-bottom: 1rem;
 }
 
+.moretus{
+  background-color: #2C2C2C;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.moretus__title{
+  color: #ede3d7;
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: "EB Garamond", serif;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.moretus__content{
+  position: absolute;
+  z-index: 10;
+}
 
 
+.moretus__container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  position: relative;
+}
+
+.moretus__card{
+  padding: 2rem;
+}
 
 
+.moretus__card--image{
+  background-color: #000;
+  width: 20rem;
+  height: 20rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.moretus__card:nth-child(1){
+  top: 0;
+}
+
+.moretus__card:nth-child(2){
+  top: 5rem;
+}
+
+
+.moretus__btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+}
+
+.moretus__btn--img{
+  width: 3rem;
+}
+
+.moretus__btn--text{
+  color: #F6F0C8;
+  font-family: "EB Garamond", serif;
+  font-size: 1rem;
+}
