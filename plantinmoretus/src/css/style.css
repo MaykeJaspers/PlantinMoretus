@@ -460,3 +460,83 @@ a {
   text-align: right;
   font-family: "Dancing Script", serif;
 }
+
+.polygot {
+  padding: 2rem;
+  color: #e3d9c4;
+}
+
+.polygot__title {
+  color: #ede3d7;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: left;
+  font-family: "EB Garamond", serif;
+  margin-bottom: 2rem;
+
+}
+
+
+.polygot__container {
+  display: flex;
+  gap: 2rem;
+  scroll-snap-type:none;
+  padding-bottom: 2rem;
+}
+
+.polygot__container::-webkit-scrollbar {
+  height: 0.5rem;
+}
+
+
+
+
+.polygot__card {
+  display: flex;
+  flex-direction: row; 
+  align-items: center; 
+  gap: 1.5rem;
+  min-width: 50rem;
+  padding: 2rem;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+}
+
+
+.polygot__card:nth-child(1) {
+  top: 0rem; /* First card stays at default position */
+}
+
+.polygot__card:nth-child(2) {
+  top: 5rem;
+}
+
+.polygot__card:nth-child(3) {
+  top: -5rem;
+}
+
+.polygot__image--img {
+  width: 20rem;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover; 
+}
+
+
+.polygot__content {
+  max-width: 35rem;
+}
+
+.polygot__subtitle {
+  color: #ffd700;
+  font-size: 1.8rem;
+  font-family: "EB Garamond", serif;
+  margin-bottom: 1rem;
+}
+
+.polygot__text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e3d9c4;
+}
