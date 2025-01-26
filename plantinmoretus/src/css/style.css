@@ -840,3 +840,33 @@ padding: 2rem 0;
 .business__link{
   border: none;
 }
+
+.legacy{
+  padding: 2rem 0;
+}
+
+.legacy__container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.legacy__title{
+  color: #ede3d7;
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: "EB Garamond", serif;
+  padding-bottom: 1rem;
+}
+
+.legacy__text{
+  color: #f1eeec;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "EB Garamond", serif;
+  padding-bottom: 1rem;
+}
+
+.legacy__image--img{
+  width: 20rem;
+}
