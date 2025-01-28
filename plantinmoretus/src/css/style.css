@@ -1361,7 +1361,7 @@ a {
   position: absolute;
   top: .625rem;
   right: .625rem;
-  size: 1.5rem;
+  width: 1.5rem;
   font-weight: bold;
   cursor: pointer;
 
@@ -1554,7 +1554,7 @@ padding: 2rem 0;
 }
 
 footer {
-  background-color: none;
+
   color: #fff;
   padding: 2.5rem 1.25rem;
   display: grid ;
@@ -1637,28 +1637,100 @@ footer {
   color: #ffd700;
 }
 
+/* Garamond */
 
-.garamond__container{
+.garamond {
+  padding: 2rem;
+}
+
+.garamond__container {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-.garamond__title{
+.garamond__title {
   text-align: left;
   color: #ede3d7;
   font-size: 5rem;
   font-weight: 700;
   font-family: "EB Garamond", serif;
+  margin-bottom: 2rem;
 }
 
-.garamond__image img{
+.garamond__image img {
   width: 30rem;
   height: auto;
 }
 
-.garamond__content{
+.garamond__content {
   text-align: left;
-  width: 30%;
+  width: 100%;
   color: #e3d9c4;
 }
+
+/* Responsive Styles */
+@media (max-width: 320px) {
+  .garamond__title {
+    font-size: 2rem;
+  }
+
+  .garamond__content {
+    width: 100%;
+  }
+
+  .garamond__image img {
+    width: 100%;
+    max-width: 15rem;
+  }
+}
+
+@media (min-width: 480px) {
+  .garamond__title {
+    font-size: 2rem;
+  }
+
+  .garamond__content {
+    width: 100%;
+  }
+
+  .garamond__image img {
+    width: 100%;
+    max-width: 18rem;
+  }
+}
+
+@media (min-width: 768px){
+  .garamond__title {
+    font-size: 3rem;
+  }
+.garamond__container{
+ flex-wrap: nowrap;
+}
+  .garamond__content {
+    width: 50%;
+  }
+
+  .garamond__image img {
+    width: 100%;
+    max-width: 20rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .garamond__title {
+    text-align: center;
+    font-size: 5rem;
+  }
+
+  .garamond__content {
+    width: 40%;
+  }
+
+  .garamond__image img {
+    width: 30rem;
+  }
+}
+
+/* Garamond end */
