@@ -937,6 +937,9 @@ a {
 }
 
  /* letter end */
+
+/* polygot */
+
 .polygot {
   padding: 2rem;
   color: #e3d9c4;
@@ -949,46 +952,37 @@ a {
   font-family: "EB Garamond", serif;
   text-align: left;
   margin-bottom: 2rem;
-
 }
-
 
 .polygot__container {
   display: flex;
+  flex-direction: row;
   gap: 2rem;
-  scroll-snap-type:none;
+  overflow-x: auto;
   padding-bottom: 2rem;
+  scroll-snap-type: x mandatory;
 }
-
-.polygot__container::-webkit-scrollbar {
-  height: 0.5rem;
-}
-
-
-
 
 .polygot__card {
   display: flex;
-  flex-direction: row; 
+  flex-direction: column; 
   align-items: center; 
+  justify-content: center;
   gap: 1.5rem;
-  min-width: 50rem;
+  min-width: 30rem;
   padding: 2rem;
   scroll-snap-align: start;
   transition: transform 0.3s ease-in-out;
   position: relative;
 }
 
-
-.polygot__card:nth-child(1) {
-  top: 0rem;
+.polygot__card:nth-child(1){
+  top: 0;
 }
-
-.polygot__card:nth-child(2) {
+.polygot__card:nth-child(2){
   top: 5rem;
 }
-
-.polygot__card:nth-child(3) {
+.polygot__card:nth-child(3){
   top: -5rem;
 }
 
@@ -998,7 +992,6 @@ a {
   border-radius: 8px;
   object-fit: cover; 
 }
-
 
 .polygot__content {
   max-width: 35rem;
@@ -1017,7 +1010,105 @@ a {
   color: #e3d9c4;
 }
 
+/* Responsive Styles */
+@media (max-width: 320px) {
+  .polygot__title {
+    font-size: 2.5rem;
+  }
 
+  .polygot__container {
+    padding: 1rem;
+  }
+
+  .polygot__card {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .polygot__image--img {
+    width: 100%;
+    max-width: 15rem;
+  }
+
+  .polygot__subtitle {
+    font-size: 1.5rem;
+  }
+
+  .polygot__text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 480px) {
+  .polygot__title {
+    font-size: 2.8rem;
+  }
+
+  .polygot__container {
+    padding: 1.5rem;
+  }
+
+  .polygot__card {
+    flex-direction: row;
+    min-width: 30rem; 
+    padding: 1.5rem;
+  }
+  .polygot__image--img{
+    width: 10rem;
+  }
+}
+  @media (min-width: 768px) {
+    .polygot__container {
+      flex-direction: row;
+      flex-wrap: nowrap;
+    }
+  
+    .polygot__card {
+      min-width: 40rem;
+      padding: 2rem;
+    }
+  
+    .polygot__title {
+      font-size: 3rem;
+    }
+  
+    .polygot__subtitle {
+      font-size: 1.8rem;
+    }
+  
+    .polygot__text {
+      font-size: 1rem;
+    }
+
+    .polygot__image--img{
+      width: 15rem;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .polygot__title {
+      font-size: 3.5rem;
+    }
+  
+    .polygot__subtitle {
+      font-size: 2rem;
+    }
+  
+    .polygot__content {
+      max-width: 40rem;
+    }
+  
+    .polygot__card {
+      min-width: 35rem;
+    }
+  
+    .polygot__image--img {
+      width: 18rem;
+    }
+  }
+  
+
+/*polygot ending */
 
 /* Info */
 .info {
