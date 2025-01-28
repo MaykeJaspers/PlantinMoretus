@@ -8,18 +8,34 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Special+Elite&display=swap"
     rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script type="module" src="./src/main.js"></script>
 </head>
 
 <body>
+  <svg style="display:none">
+    <symbol id="navicon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M21 11h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1h18c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
+      <path d="M3 7h18c0.6 0 1-0.4 1-1s-0.4-1-1-1h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1z"></path>
+      <path d="M21 17h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1h18c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
+    </symbol>
+    <symbol id="close" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M19.1,17.7L6.3,4.9c-.4-.4-1-.4-1.4,0s-.4,1,0,1.4l12.7,12.7c.4.4,1,.4,1.4,0s.4-1,0-1.4Z" />
+      <path d="M6.3,19.1l12.7-12.7c.4-.4.4-1,0-1.4s-1-.4-1.4,0l-12.7,12.7c-.4.4-.4,1,0,1.4s1,.4,1.4,0Z" />
+    </symbol>
+  </svg>
 
   <nav class="nav">
     <div class="nav__logo">
       <a href="/"><img src="./src/images/logo.svg" alt="Plantin Moretus Museum Logo"></a>
     </div>
+    <button class="nav__button hidden" aria-label="Navigation menu" aria-expanded="false" aria-controls="nav__list">
+      <svg role="img" aria-labelledby="svg-title" focusable="false">
+        <use id="iconlink" href="#navicon"></use>
+      </svg>
+    </button>
     <div class="nav__menu">
       <ul class="nav__list" id="nav__list">
         <li class="nav__item"><a href="#">Home</a></li>
@@ -37,11 +53,16 @@
     </div>
   </nav>
 
+
   <header>
     <section class="header__container">
       <h1 class="header__bigger">
-        <span>CHR</span><span class="header__span">I</span><span>ST</span><span class="header__star"><img
-            src="./src/images/star.png" alt=""></span><span>PH</span>
+        <span>CHR</span><span class="header__span">I</span><span>ST</span>
+        <span class="header__star">
+          <img sizes="(max-width: 324px) 100vw, 324px" srcset="
+          ./src/images/star200.webp 200w,
+          ./src/images/star324.webp 324w" src="./src/images/star324.webp" alt="star">
+        </span><span>PH</span>
       </h1>
       <div class="header__content">
         <div class="header__image">
@@ -81,9 +102,12 @@
             craftsmanship that would define his life.</p>
         </div>
         <div class="timeline__image">
-          <img src="./src/images/SaintAvertin.png" alt="Humble Beginnings">
+          <img class="timeline__image--img" sizes="(max-width: 378px) 100vw, 378px" srcset="
+          ./src/images/SaintAvertin200.webp 200w,
+          ./src/images/SaintAvertin378.webp 378w" src="./src/images/SaintAvertin378.webp" alt="Humble Beginnings">
+          <p class="timeline__image--text"><span>S</span>aint-avertin</p>
         </div>
-        <div class="timeline__year">
+        <div class="timeline__year right">
           <p>1520</p>
         </div>
       </div>
@@ -100,7 +124,7 @@
             not only patience but also the value of precision—traits that will serve him well in the world of books and
             printing.</p>
         </div>
-        <div class="timeline__year">
+        <div class="timeline__year left">
           <p>1530s</p>
         </div>
       </div>
@@ -115,10 +139,13 @@
         </div>
 
         <div class="timeline__image">
-          <img src="./src/images/JeanneRiviere.png" alt="HeartsandAmbitions">
+          <img sizes="(max-width: 370px) 100vw, 370px" srcset="
+          ./src/images/JeanneRiviere200.webp 200w,
+          ./src/images/JeanneRiviere370.webp 370w" src="./src/images/JeanneRiviere370.webp" alt="HeartsandAmbitions">
+          <p class="timeline__image--text"><span>J</span>eanne Rivière</p>
         </div>
 
-        <div class="timeline__year">
+        <div class="timeline__year right">
           <p>1540</p>
         </div>
       </div>
@@ -126,7 +153,10 @@
 
       <div class="timeline__event">
         <div class="timeline__image">
-          <img src="./src/images/horse.png" alt="City of Opportunity">
+          <img sizes="(max-width: 370px) 100vw, 370px" srcset="
+          ./src/images/horse200.webp 200w,
+          ./src/images/horse370.webp 370w" src="./src/images/horse370.webp" alt="City of Opportunity">
+          <p class="timeline__image--text"><span>P</span>aris</p>
         </div>
         <div class="timeline__content">
           <h3>A City of Opportunity</h3>
@@ -135,7 +165,7 @@
             each page he handles, stokes his dream of one day producing works of his own.</p>
         </div>
 
-        <div class="timeline__year">
+        <div class="timeline__year left">
           <p>1548</p>
         </div>
       </div>
@@ -151,9 +181,12 @@
             each page he handles, stokes his dream of one day producing works of his own.</p>
         </div>
         <div class="timeline__image">
-          <img src="./src/images/antwerpen.png" alt="Hearts and Ambitions">
+          <img sizes="(max-width: 378px) 100vw, 378px" srcset="
+          ./src/images/antwerpen200.webp 200w,
+          ./src/images/antwerpen378.webp 378w" src="./src/images/antwerpen378.webp" alt="Hearts and Ambitions">
+          <p class="timeline__image--text"><span>A</span>ntwerp</p>
         </div>
-        <div class="timeline__year">
+        <div class="timeline__year right">
           <p>1550</p>
         </div>
       </div>
@@ -181,12 +214,12 @@
 
       <section class="letter">
         <h2 class="letter__title">The printing process</h2>
-        <h3 class="letter__step">Step 1</h3>
+
         <div class="letter__container">
 
           <div class="letter__content">
 
-
+            <h3 class="letter__step">Step 1</h3>
             <p class="letter__text">Printing in the 16th century was a meticulous and labor-intensive process.
               Plantijn’s
               workshop relied on movable type, where each letter was arranged by hand to create pages.</p>
@@ -291,6 +324,7 @@
       <div class="garamond__container">
 
         <div class="garamond__content">
+          <h2>Heading</h2>
           <p class="garamond__text">Plantin wasn’t just a printer, he was an artist. He worked with the best type
             designers of his time, including Claude Garamond, to create fonts that were both beautiful and legible.
             These fonts became the standard for generations and are still used today.</p>
