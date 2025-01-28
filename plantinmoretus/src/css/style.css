@@ -1599,75 +1599,145 @@ a {
 
 /* Moretus end */
 
-.business__container{
+/* business */
+.business__container {
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
+.business__title{
+  color: #ede3d7;
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: "EB Garamond", serif;
+  text-align: center;
+  padding-bottom: 1rem;
+}
 
-
-.business__card{
+.business__card {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   padding: 1rem;
+  gap: 2rem;
 }
 
-.business__time{
+.business__content {
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+}
+
+.business__cover {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.business__image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+.business__btn {
+  position: absolute;
+  top: -0.3125rem;
+  left: -0.625rem;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.business__btn--img {
+  width: 2.5rem;
+}
+
+.business__btn--text {
+  color: #F6F0C8;
+  font-family: "EB Garamond", serif;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+.business__time {
   color: #EAC066;
   font-size: 2rem;
   font-weight: 700;
   font-family: "EB Garamond", serif;
 }
 
-
-.business__subtitle{
+.business__subtitle {
   color: #F9F8EF;
   font-size: 1.5rem;
   font-weight: 700;
   font-family: "EB Garamond", serif;
 }
 
-.business__text{
+.business__text {
   color: #F9F8EF;
   font-size: 1rem;
   font-weight: 400;
   font-family: "EB Garamond", serif;
+  max-width: 600px;
 }
 
-.business__image img{
-  width: 30rem;
+.business__link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #EAC066;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 1rem;
+  cursor: pointer;
 }
 
-.business__text{
-  width: 50%;;
+@media (max-width: 768px) {
+  .business__card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .business__image {
+    max-width: 250px;
+  }
+
+  .business__btn {
+    top: 5px;
+    left: 5px;
+  }
+
+  .business__btn--img {
+    width: 2rem;
+  }
+
+  .business__btn--text {
+    font-size: 0.9rem;
+  }
+
+  .business__time {
+    font-size: 1.8rem;
+  }
+
+  .business__subtitle {
+    font-size: 1.3rem;
+  }
+
+  .business__text {
+    font-size: 0.9rem;
+  }
 }
 
-.business__btn{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  background: none;
-}
 
-.business__btn--img{
-  width: 3rem;
-}
-
-.business__btn--text{
-  color: #F6F0C8;
-  font-family: "EB Garamond", serif;
-  font-size: 1rem;
-}
-
-.business{
-width: 100%;
-padding: 2rem 0;
-}
-
-.business__link{
-  border: none;
-}
+/* Business end */
 
 .legacy{
   padding: 2rem 0;
