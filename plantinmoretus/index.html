@@ -8,18 +8,34 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Special+Elite&display=swap"
     rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script type="module" src="./src/main.js"></script>
 </head>
 
 <body>
+  <svg style="display:none">
+    <symbol id="navicon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M21 11h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1h18c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
+      <path d="M3 7h18c0.6 0 1-0.4 1-1s-0.4-1-1-1h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1z"></path>
+      <path d="M21 17h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1h18c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
+    </symbol>
+    <symbol id="close" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M19.1,17.7L6.3,4.9c-.4-.4-1-.4-1.4,0s-.4,1,0,1.4l12.7,12.7c.4.4,1,.4,1.4,0s.4-1,0-1.4Z" />
+      <path d="M6.3,19.1l12.7-12.7c.4-.4.4-1,0-1.4s-1-.4-1.4,0l-12.7,12.7c-.4.4-.4,1,0,1.4s1,.4,1.4,0Z" />
+    </symbol>
+  </svg>
 
   <nav class="nav">
     <div class="nav__logo">
       <a href="/"><img src="./src/images/logo.svg" alt="Plantin Moretus Museum Logo"></a>
     </div>
+    <button class="nav__button hidden" aria-label="Navigation menu" aria-expanded="false" aria-controls="nav__list">
+      <svg role="img" aria-labelledby="svg-title" focusable="false">
+        <use id="iconlink" href="#navicon"></use>
+      </svg>
+    </button>
     <div class="nav__menu">
       <ul class="nav__list" id="nav__list">
         <li class="nav__item"><a href="#">Home</a></li>
@@ -37,11 +53,16 @@
     </div>
   </nav>
 
+
   <header>
     <section class="header__container">
       <h1 class="header__bigger">
-        <span>CHR</span><span class="header__span">I</span><span>ST</span><span class="header__star"><img
-            src="./src/images/star.png" alt=""></span><span>PH</span>
+        <span>CHR</span><span class="header__span">I</span><span>ST</span>
+        <span class="header__star">
+          <img sizes="(max-width: 324px) 100vw, 324px" srcset="
+          ./src/images/star200.webp 200w,
+          ./src/images/star324.webp 324w" src="./src/images/star324.webp" alt="star">
+        </span><span>PH</span>
       </h1>
       <div class="header__content">
         <div class="header__image">
@@ -81,9 +102,12 @@
             craftsmanship that would define his life.</p>
         </div>
         <div class="timeline__image">
-          <img src="./src/images/SaintAvertin.png" alt="Humble Beginnings">
+          <img class="timeline__image--img" sizes="(max-width: 378px) 100vw, 378px" srcset="
+          ./src/images/SaintAvertin200.webp 200w,
+          ./src/images/SaintAvertin378.webp 378w" src="./src/images/SaintAvertin378.webp" alt="Humble Beginnings">
+          <p class="timeline__image--text"><span>S</span>aint-avertin</p>
         </div>
-        <div class="timeline__year">
+        <div class="timeline__year right">
           <p>1520</p>
         </div>
       </div>
@@ -100,7 +124,7 @@
             not only patience but also the value of precision—traits that will serve him well in the world of books and
             printing.</p>
         </div>
-        <div class="timeline__year">
+        <div class="timeline__year left">
           <p>1530s</p>
         </div>
       </div>
@@ -115,10 +139,13 @@
         </div>
 
         <div class="timeline__image">
-          <img src="./src/images/JeanneRiviere.png" alt="HeartsandAmbitions">
+          <img sizes="(max-width: 370px) 100vw, 370px" srcset="
+          ./src/images/JeanneRiviere200.webp 200w,
+          ./src/images/JeanneRiviere370.webp 370w" src="./src/images/JeanneRiviere370.webp" alt="HeartsandAmbitions">
+          <p class="timeline__image--text"><span>J</span>eanne Rivière</p>
         </div>
 
-        <div class="timeline__year">
+        <div class="timeline__year right">
           <p>1540</p>
         </div>
       </div>
@@ -126,7 +153,10 @@
 
       <div class="timeline__event">
         <div class="timeline__image">
-          <img src="./src/images/horse.png" alt="City of Opportunity">
+          <img sizes="(max-width: 370px) 100vw, 370px" srcset="
+          ./src/images/horse200.webp 200w,
+          ./src/images/horse370.webp 370w" src="./src/images/horse370.webp" alt="City of Opportunity">
+          <p class="timeline__image--text"><span>P</span>aris</p>
         </div>
         <div class="timeline__content">
           <h3>A City of Opportunity</h3>
@@ -135,7 +165,7 @@
             each page he handles, stokes his dream of one day producing works of his own.</p>
         </div>
 
-        <div class="timeline__year">
+        <div class="timeline__year left">
           <p>1548</p>
         </div>
       </div>
@@ -151,9 +181,12 @@
             each page he handles, stokes his dream of one day producing works of his own.</p>
         </div>
         <div class="timeline__image">
-          <img src="./src/images/antwerpen.png" alt="Hearts and Ambitions">
+          <img sizes="(max-width: 378px) 100vw, 378px" srcset="
+          ./src/images/antwerpen200.webp 200w,
+          ./src/images/antwerpen378.webp 378w" src="./src/images/antwerpen378.webp" alt="Hearts and Ambitions">
+          <p class="timeline__image--text"><span>A</span>ntwerp</p>
         </div>
-        <div class="timeline__year">
+        <div class="timeline__year right">
           <p>1550</p>
         </div>
       </div>
@@ -166,9 +199,27 @@
         <div class="print__container">
 
           <div class="print__scroll">
-            <img src="./src/images/PrintingPress.JPG" alt="Printing Press">
-            <img src="./src/images/printingpress2.jpg" alt="Printing Press">
-            <img src="./src/images/printingpress3.jpg" alt="Printing Press">
+            <img sizes="(max-width: 1200px) 100vw, 1200px" srcset="
+            ./src/images/PrintingPress200.webp 200w,
+            ./src/images/PrintingPress504.webp 504w,
+            ./src/images/PrintingPress721.webp 721w,
+            ./src/images/PrintingPress928.webp 928w,
+            ./src/images/PrintingPress1158.webp 1158w,
+            ./src/images/PrintingPress1200.webp 1200w" src="./src/images/PrintingPress1200.webp"
+              alt="Printing Press 1">
+            <img sizes="(max-width: 1024px) 100vw, 1024px" srcset="
+            ./src/images/printingpress2200.webp 200w,
+            ./src/images/printingpress2483.webp 483w,
+            ./src/images/printingpress2672.webp 672w,
+            ./src/images/printingpress2861.webp 861w,
+            ./src/images/printingpress21013.webp 1013w,
+            ./src/images/printingpress21024.webp 1024w" src="./src/images/printingpress21024.webp"
+              alt="Printing Press 2">
+            <img sizes="(max-width: 640px) 100vw, 640px" srcset="
+            ./src/images/printingpress3200.webp 200w,
+            ./src/images/printingpress3459.webp 459w,
+            ./src/images/printingpress3604.webp 604w,
+            ./src/images/printingpress3640.webp 640w" src="./src/images/printingpress3640.webp" alt="Printing Press">
           </div>
           <div class="print__text">
             <p>In 1555, Plantin founded the Officina Plantiniana, a printing workshop like no other. While most printers
@@ -181,12 +232,12 @@
 
       <section class="letter">
         <h2 class="letter__title">The printing process</h2>
-        <h3 class="letter__step">Step 1</h3>
+
         <div class="letter__container">
 
           <div class="letter__content">
 
-
+            <h3 class="letter__step">Step 1</h3>
             <p class="letter__text">Printing in the 16th century was a meticulous and labor-intensive process.
               Plantijn’s
               workshop relied on movable type, where each letter was arranged by hand to create pages.</p>
@@ -205,7 +256,17 @@
         <div class="polygot__container">
 
           <div class="polygot__card">
-            <img src="./src/images/polygotBible.png" alt="Bible cover" class="polygot__image--img">
+            <img sizes="(max-width: 1400px) 100vw, 1400px" srcset="
+            ./src/images/polygotBible200.webp 200w,
+            ./src/images/polygotBible538.webp 538w,
+            ./src/images/polygotBible743.webp 743w,
+            ./src/images/polygotBible900.webp 900w,
+            ./src/images/polygotBible1056.webp 1056w,
+            ./src/images/polygotBible1188.webp 1188w,
+            ./src/images/polygotBible1321.webp 1321w,
+            ./src/images/polygotBible1397.webp 1397w,
+            ./src/images/polygotBible1400.webp 1400w" src="./src/images/polygotBible1400.webp" alt="Bible cover"
+              class="polygot__image--img">
             <div class="polygot__content">
               <h3 class="polygot__subtitle">A visionary work of unity</h3>
               <p class="polygot__text">Among Plantin’s greatest achievements was the Polyglot Bible, a multilingual
@@ -216,7 +277,17 @@
           </div>
 
           <div class="polygot__card">
-            <img src="./src/images/polygotBible2.png" alt="Bible cover" class="polygot__image--img">
+            <img sizes="(max-width: 1400px) 100vw, 1400px" srcset="
+            ./src/images/polygotBible2200.webp 200w,
+            ./src/images/polygotBible2576.webp 576w,
+            ./src/images/polygotBible2759.webp 759w,
+            ./src/images/polygotBible2960.webp 960w,
+            ./src/images/polygotBible21130.webp 1130w,
+            ./src/images/polygotBible21271.webp 1271w,
+            ./src/images/polygotBible21321.webp 1321w,
+            ./src/images/polygotBible21394.webp 1394w,
+            ./src/images/polygotBible21400.webp 1400w" src="./src/images/polygotBible21400.webp" alt="Bible cover"
+              class="polygot__image--img">
             <div class="polygot__content">
               <h3 class="polygot__subtitle">A visionary work of unity</h3>
               <p class="polygot__text">Among Plantin’s greatest achievements was the Polyglot Bible, a multilingual
@@ -242,16 +313,27 @@
     </div>
 
     <section class="info">
-      <h2 class="info__title">
-        <span class="info__span">Hey</span>
-        <span class="info__span">did</span>
-        <span class="info__span">you</span>
-        <span class="info__span">know</span>
-      </h2>
+      <div class="info__animation">
+        <div class="info__star">
+          <img class="info__star--img" src="./src/images/star.png" alt="star">
+        </div>
+        <h2 class="info__title">
+          <span class="info__span">Hey</span>
+          <span class="info__span">did</span>
+          <span class="info__span">you</span>
+          <span class="info__span">know</span>
+        </h2>
+        <div class="info__star">
+          <img class="info__star--img" src="./src/images/star.png" alt="star">
+        </div>
+      </div>
       <div class="info__information">
         <div class="info__container">
           <div class="info__image">
-            <img src="./src/images/plantinInfo.png" alt="Plantin" class="info__image--img">
+            <img sizes="(max-width: 674px) 100vw, 674px" srcset="
+            ./src/images/plantinInfo200.webp 200w,
+            ./src/images/plantinInfo674.webp 674w" src="./src/images/plantinInfo674.webp" alt="Plantin"
+              class="info__image--img">
           </div>
           <div class="info__content">
             <div class="info__speech">
@@ -277,7 +359,10 @@
             </p>
           </div>
           <div class="info__image">
-            <img src="./src/images/moretusInfo.png" alt="Moretus" class="info__image--img">
+            <img sizes="(max-width: 621px) 100vw, 621px" srcset="
+            ./src/images/moretusInfo200.webp 200w,
+            ./src/images/moretusInfo621.webp 621w" src="./src/images/moretusInfo621.webp" alt="Moretus"
+              class="info__image--img">
           </div>
 
         </div>
@@ -291,6 +376,7 @@
       <div class="garamond__container">
 
         <div class="garamond__content">
+          <h2>Heading</h2>
           <p class="garamond__text">Plantin wasn’t just a printer, he was an artist. He worked with the best type
             designers of his time, including Claude Garamond, to create fonts that were both beautiful and legible.
             These fonts became the standard for generations and are still used today.</p>
@@ -327,31 +413,37 @@
 
 
     <section class="moretus">
-
-      <div class="moretus__content">
-        <h2 class="moretus__title">A partnership that shaped history</h2>
-      </div>
-
+      <h2 class="moretus__title">A partnership that shaped history</h2>
       <div class="moretus__container">
-
-        <div class="moretus__card">
-          <img class="moretus__card--image" src="./src/images/plantin2.png" alt="plantin">
-          <button class="moretus__btn"><img class="moretus__btn--img" src="./src/images/arrow.png"
+        <div class="moretus__content moretus__content--left">
+          <div class="moretus__card">
+            <img class="moretus__card--image" src="./src/images/plantin2.png" alt="plantin">
+            <div class="moretus__name">
+              <p><span>C</span>hristoph Plantin</p>
+            </div>
+          </div>
+          <button class="moretus__btn"><img class="moretus__btn--left" src="./src/images/arrow.png"
               alt="click icon"><span class="moretus__btn--text">Click
               Me</span></button>
         </div>
 
-        <div class="moretus__card">
-          <button class="moretus__btn"><img class="moretus__btn--img" src="./src/images/arrow.png"
-              alt="click icon"><span class="moretus__btn--text">Click
-              Me</span></button>
-          <img class="moretus__card--image" src="./src/images/moretus.png" alt="moretus">
+        <div class="moretus__content moretus__content--right">
+          <button class="moretus__btn"><span class="moretus__btn--text">Click
+              Me</span><img class="moretus__btn--right" src="./src/images/arrow.png" alt="click icon"></button>
+          <div class="moretus__card">
+            <img class="moretus__card--image" src="./src/images/moretus.png" alt="moretus">
+            <div class="moretus__name">
+              <p><span>J</span>an I Moretus</p>
+            </div>
+          </div>
         </div>
+
 
       </div>
     </section>
 
     <section class="business">
+      <h2 class="business__title">The woman who wove success</h2>
       <div class="business__container">
 
         <div class="business__card">
@@ -438,6 +530,7 @@
 
       </div>
     </section>
+
     <section class="legacy">
       <div class="legacy__container">
         <div class="legacy__content">
