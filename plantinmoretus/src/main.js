@@ -1,6 +1,4 @@
 import '../src/js/scroll'
-import '../src/css/style.css'
-import '../src/css/reset.css'
 import '../src/js/cursor'
 import '../src/js/popup'
 import '../src/js/hamburger'
