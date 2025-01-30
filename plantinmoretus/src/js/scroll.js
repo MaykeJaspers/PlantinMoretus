@@ -66,15 +66,15 @@ gsap.to(images, {
 const steps = [
   {
     text: "Printing in the 16th century was a meticulous and labor-intensive process. Plantin’s workshop relied on movable type, where each letter was arranged by hand to create pages.",
-    lottiePath: "/PlantinMoretus/src/json/Step1.json", 
+    lottiePath: "/plantinmoretus/src/json/Step1.json", 
   },
   {
     text: "Ink was carefully applied to the type using a leather ball, ensuring even distribution before the press was operated.",
-    lottiePath: "/PlantinMoretus/src/json/Step2.json", 
+    lottiePath: "/plantinmoretus/src/json/Step2.json", 
   },
   {
     text: "Once printed, pages were hung up to dry before being assembled into books and distributed across Europe.",
-    lottiePath: "/PlantinMoretus/src/json/Step3.json",
+    lottiePath: "/plantinmoretus/src/json/Step3.json",
   }
 ];
 
