@@ -78,6 +78,7 @@ const steps = [
   }
 ];
 
+
 const stepText = document.querySelector(".letter__text");
 const stepImage = document.querySelector(".letter__animation img");
 const stepTitle = document.querySelector(".letter__step");
