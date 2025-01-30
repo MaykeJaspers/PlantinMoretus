@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plantin Moretus Museum</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,11 +11,15 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Special+Elite&display=swap"
     rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
   <script type="module" src="./src/main.js"></script>
 </head>
 
 <body>
+
+
   <svg style="display:none">
     <symbol id="navicon" viewBox="0 0 24 24" fill="currentColor">
       <path d="M21 11h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1h18c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
@@ -27,22 +32,25 @@
     </symbol>
   </svg>
 
-  <nav class="nav">
-    <div class="nav__logo">
+  <nav class="navbar">
+    <div class="logo">
       <a href="/"><img src="./src/images/logo.svg" alt="Plantin Moretus Museum Logo"></a>
     </div>
-    <button class="nav__button hidden" aria-label="Navigation menu" aria-expanded="false" aria-controls="nav__list">
-      <svg role="img" aria-labelledby="svg-title" focusable="false">
-        <use id="iconlink" href="#navicon"></use>
+
+    <button class="navbar-toggler" type="button" aria-label="Toggle navigation" aria-expanded="false">
+      <svg class="navbar-toggler-icon">
+        <use href="#navicon"></use>
       </svg>
     </button>
-    <div class="nav__menu">
-      <ul class="nav__list" id="nav__list">
-        <li class="nav__item"><a href="#">Home</a></li>
-        <li class="nav__item"><a href="#">About Plantin</a></li>
-        <li class="nav__item"><a href="#">Key Innovation</a></li>
-        <li class="nav__item"><a href="#">Buy Tickets</a></li>
+
+    <div class="navbar-menu">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a href="#">Home</a></li>
+        <li class="nav-item"><a href="#">About Plantin</a></li>
+        <li class="nav-item"><a href="#">Key Innovation</a></li>
+        <li class="nav-item"><a href="#">Buy Tickets</a></li>
       </ul>
+
       <div class="nav__language-dropdown">
         <select id="language-select" aria-label="Select language">
           <option value="en" selected>English</option>
@@ -53,13 +61,12 @@
     </div>
   </nav>
 
-
   <header>
     <section class="header__container">
       <h1 class="header__bigger">
         <span>CHR</span><span class="header__span">I</span><span>ST</span>
         <span class="header__star">
-          <img sizes="(max-width: 324px) 100vw, 324px" srcset="
+          <img sizes="(min-width: 780px) 240px, (min-width: 500px) 160px, 80px" srcset="
           ./src/images/star200.webp 200w,
           ./src/images/star324.webp 324w" src="./src/images/star324.webp" alt="star">
         </span><span>PH</span>
@@ -68,14 +75,14 @@
         <div class="header__image">
           <div class="header__passer"></div>
 
-          <img class="header__plantin" sizes="(max-width: 2040px) 100vw, 2040px" srcset="
-          ../src/images/plantin190.webp 190w,
-          ../src/images/plantin692.webp 692w,
-          ../src/images/plantin1021.webp 1021w,
-          ../src/images/plantin1344.webp 1344w,
-          ../src/images/plantin1640.webp 1640w,
-          ../src/images/plantin1948.webp 1948w,
-          ../src/images/plantin2040.webp 2040w" src="../src/images/plantin2040.webp" alt="plantin">
+          <img class="header__plantin"
+            sizes="(min-width: 1440px) 400px, (min-width: 1220px) calc(92.5vw - 914px), (min-width: 1100px) 333px, (min-width: 780px) calc(99.33vw - 740px), (min-width: 700px) 174px, (min-width: 520px) calc(100vw - 514px), (min-width: 460px) 55px, (min-width: 420px) calc(100vw - 399px), calc(-8.75vw + 36px)"
+            srcset="
+          ./src/images/plantin200.webp 200w,
+          ./src/images/plantin547.webp 547w,
+          ./src/images/plantin883.webp 883w,
+          ./src/images/plantin1123.webp 1123w,
+          ./src/images/plantin1400.webp 1400w" src="./src/images/plantin1400.webp" alt="plantin">
 
 
         </div>
@@ -93,97 +100,92 @@
   <main>
     <section class="timeline__container">
 
+      <div class="timeline__line"></div>
+
       <div class="timeline__event">
         <div class="timeline__content">
           <h3>Humble Beginnings</h3>
-          <p>In the quiet village of Saint-Avertin near Tours, France, a boy named Christoph Plantin is born. Surrounded
-            by the lush countryside, little does anyone suspect that this boy will one day revolutionize the world of
-            printing. His early years are spent learning from the skilled artisans in the region, a subtle hint of the
-            craftsmanship that would define his life.</p>
+          <p>In the quiet village of Saint-Avertin, a boy named Christoph Plantin is born. Raised among artisans and
+            craftsmen, he learns the value of dedication and precision—skills that will one day set him apart in the
+            world of printing.</p>
         </div>
         <div class="timeline__image">
-          <img class="timeline__image--img" sizes="(max-width: 378px) 100vw, 378px" srcset="
-          ./src/images/SaintAvertin200.webp 200w,
-          ./src/images/SaintAvertin378.webp 378w" src="./src/images/SaintAvertin378.webp" alt="Humble Beginnings">
-          <p class="timeline__image--text"><span>S</span>aint-avertin</p>
+          <img class="timeline__image--img" sizes="(min-width: 500px) 320px, 45vw" srcset="
+              ./src/images/SaintAvertin200.webp 200w,
+              ./src/images/SaintAvertin378.webp 378w" src="./src/images/SaintAvertin378.webp" alt="Humble Beginnings">
+          <p class="timeline__image--text"><span>S</span>aint-Avertin</p>
         </div>
         <div class="timeline__year right">
           <p>1520</p>
         </div>
       </div>
 
-
       <div class="timeline__event">
         <div class="timeline__image">
-          <img src="./src/images/JeanneRiviere.png" alt="Apprentices Path">
+          <img sizes="(min-width: 500px) 320px, 45vw" srcset="
+          ./src/images/bookbinding200.webp 200w,
+          ./src/images/bookbinding370.webp 370w" src="./src/images/bookbinding370.webp" alt="Apprentice's Path">
+          <p class="timeline__image--text"><span>B</span>ook Binding</p>
         </div>
         <div class="timeline__content">
           <h3>The Apprentice's Path</h3>
-          <p>As a young man, Christoph begins his apprenticeship in bookbinding and leatherworking. Day by day, his
-            hands become skilled, his eyes sharp, and his mind disciplined. The long hours of meticulous work teach him
-            not only patience but also the value of precision—traits that will serve him well in the world of books and
-            printing.</p>
+          <p>As a young man, Christoph pursues an apprenticeship in bookbinding and leatherworking. Day after day, he
+            hones his skills, developing the sharp eye and steady hands that will serve him well in the world of
+            publishing. The long hours of meticulous work instill in him a deep respect for craftsmanship.</p>
         </div>
         <div class="timeline__year left">
           <p>1530s</p>
         </div>
       </div>
 
-
       <div class="timeline__event">
         <div class="timeline__content">
           <h3>Hearts and Ambitions</h3>
-          <p>Christoph marries Jeanne Rivière, a woman as steadfast as he is ambitious. Together, they form a
-            team—Jeanne’s unwavering support allows Christoph to focus on perfecting his craft and dreaming of a greater
-            future. Their bond is one of quiet determination, laying the foundation for the family legacy to come.</p>
+          <p>Amid his journey, Christoph meets and marries Jeanne Rivière, a woman whose steadfast support and
+            determination match his own. Together, they form not just a family, but a partnership—one that will provide
+            him with the stability to pursue greater dreams.</p>
         </div>
-
         <div class="timeline__image">
-          <img sizes="(max-width: 370px) 100vw, 370px" srcset="
-          ./src/images/JeanneRiviere200.webp 200w,
-          ./src/images/JeanneRiviere370.webp 370w" src="./src/images/JeanneRiviere370.webp" alt="HeartsandAmbitions">
+          <img sizes="(min-width: 500px) 320px, 45vw" srcset="
+              ./src/images/JeanneRiviere200.webp 200w,
+              ./src/images/JeanneRiviere370.webp 370w" src="./src/images/JeanneRiviere370.webp"
+            alt="Hearts and Ambitions">
           <p class="timeline__image--text"><span>J</span>eanne Rivière</p>
         </div>
-
         <div class="timeline__year right">
           <p>1540</p>
         </div>
       </div>
 
-
       <div class="timeline__event">
         <div class="timeline__image">
-          <img sizes="(max-width: 370px) 100vw, 370px" srcset="
-          ./src/images/horse200.webp 200w,
-          ./src/images/horse370.webp 370w" src="./src/images/horse370.webp" alt="City of Opportunity">
+          <img sizes="(min-width: 500px) 320px, 45vw" srcset="
+              ./src/images/horse200.webp 200w,
+              ./src/images/horse370.webp 370w" src="./src/images/horse370.webp" alt="City of Opportunity">
           <p class="timeline__image--text"><span>P</span>aris</p>
         </div>
         <div class="timeline__content">
           <h3>A City of Opportunity</h3>
-          <p>With his skills refined, Christoph heads to Paris—the beating heart of intellectual Europe. In this city of
-            ideas, he deepens his understanding of the power of books to shape minds and societies. Each book he binds,
-            each page he handles, stokes his dream of one day producing works of his own.</p>
+          <p>With his growing expertise, Christoph moves to Paris—the intellectual heart of Europe. Here, surrounded by
+            scholars, printers, and bookbinders, he deepens his understanding of the power of the written word. Each
+            book he handles fuels his dream of publishing works of his own.</p>
         </div>
-
         <div class="timeline__year left">
           <p>1548</p>
         </div>
       </div>
 
-
-
       <div class="timeline__event">
-
         <div class="timeline__content">
-          <h3 class="">A new beginning</h3>
-          <p>With his skills refined, Christoph heads to Paris—the beating heart of intellectual Europe. In this city of
-            ideas, he deepens his understanding of the power of books to shape minds and societies. Each book he binds,
-            each page he handles, stokes his dream of one day producing works of his own.</p>
+          <h3>A New Beginning</h3>
+          <p>Drawn by its booming trade and vibrant cultural scene, Christoph settles in Antwerp. The city, a crossroads
+            of commerce and ideas, offers him the perfect stage to begin his own printing business. Here, he takes his
+            first steps toward a legacy that will shape the future of publishing.</p>
         </div>
         <div class="timeline__image">
-          <img sizes="(max-width: 378px) 100vw, 378px" srcset="
-          ./src/images/antwerpen200.webp 200w,
-          ./src/images/antwerpen378.webp 378w" src="./src/images/antwerpen378.webp" alt="Hearts and Ambitions">
+          <img sizes="(min-width: 500px) 326px, 44.44vw" srcset="
+              ./src/images/antwerpen200.webp 200w,
+              ./src/images/antwerpen378.webp 378w" src="./src/images/antwerpen378.webp" alt="Antwerp">
           <p class="timeline__image--text"><span>A</span>ntwerp</p>
         </div>
         <div class="timeline__year right">
@@ -199,7 +201,7 @@
         <div class="print__container">
 
           <div class="print__scroll">
-            <img sizes="(max-width: 1200px) 100vw, 1200px" srcset="
+            <img sizes="(min-width: 780px) 533px, (min-width: 340px) 384px, 320px" srcset="
             ./src/images/PrintingPress200.webp 200w,
             ./src/images/PrintingPress504.webp 504w,
             ./src/images/PrintingPress721.webp 721w,
@@ -225,7 +227,7 @@
             <p>In 1555, Plantin founded the Officina Plantiniana, a printing workshop like no other. While most printers
               worked with one or two presses, Plantin’s workshop housed 22. It became Europe’s largest and most advanced
               printing house, producing everything from academic texts to religious works.</p>
-            <button class="print__btn">From type to page</button>
+            <button class="letter__btn">From type to page</button>
           </div>
         </div>
       </section>
@@ -239,13 +241,13 @@
 
             <h3 class="letter__step">Step 1</h3>
             <p class="letter__text">Printing in the 16th century was a meticulous and labor-intensive process.
-              Plantijn’s
+              Plantin’s
               workshop relied on movable type, where each letter was arranged by hand to create pages.</p>
             <a href="" class="letter__btn">Prints that changed history</a>
           </div>
 
           <div class="letter__animation">
-            <img src="./src/images/placeholder.png" alt="placeholder">
+            <div id="lottie-animation"></div>
           </div>
 
         </div>
@@ -254,48 +256,6 @@
       <section class="polygot">
         <h2 class="polygot__title">The polygot bible</h2>
         <div class="polygot__container">
-
-          <div class="polygot__card">
-            <img sizes="(max-width: 1400px) 100vw, 1400px" srcset="
-            ./src/images/polygotBible200.webp 200w,
-            ./src/images/polygotBible538.webp 538w,
-            ./src/images/polygotBible743.webp 743w,
-            ./src/images/polygotBible900.webp 900w,
-            ./src/images/polygotBible1056.webp 1056w,
-            ./src/images/polygotBible1188.webp 1188w,
-            ./src/images/polygotBible1321.webp 1321w,
-            ./src/images/polygotBible1397.webp 1397w,
-            ./src/images/polygotBible1400.webp 1400w" src="./src/images/polygotBible1400.webp" alt="Bible cover"
-              class="polygot__image--img">
-            <div class="polygot__content">
-              <h3 class="polygot__subtitle">A visionary work of unity</h3>
-              <p class="polygot__text">Among Plantin’s greatest achievements was the Polyglot Bible, a multilingual
-                edition designed to unite scholars and promote understanding across cultures. This monumental work
-                featured
-                texts in Hebrew, Greek, and Latin, with intricate illustrations and impeccable typography.</p>
-            </div>
-          </div>
-
-          <div class="polygot__card">
-            <img sizes="(max-width: 1400px) 100vw, 1400px" srcset="
-            ./src/images/polygotBible2200.webp 200w,
-            ./src/images/polygotBible2576.webp 576w,
-            ./src/images/polygotBible2759.webp 759w,
-            ./src/images/polygotBible2960.webp 960w,
-            ./src/images/polygotBible21130.webp 1130w,
-            ./src/images/polygotBible21271.webp 1271w,
-            ./src/images/polygotBible21321.webp 1321w,
-            ./src/images/polygotBible21394.webp 1394w,
-            ./src/images/polygotBible21400.webp 1400w" src="./src/images/polygotBible21400.webp" alt="Bible cover"
-              class="polygot__image--img">
-            <div class="polygot__content">
-              <h3 class="polygot__subtitle">A visionary work of unity</h3>
-              <p class="polygot__text">Among Plantin’s greatest achievements was the Polyglot Bible, a multilingual
-                edition designed to unite scholars and promote understanding across cultures. This monumental work
-                featured
-                texts in Hebrew, Greek, and Latin, with intricate illustrations and impeccable typography.</p>
-            </div>
-          </div>
 
           <div class="polygot__card">
             <img src="./src/images/polygotBible.png" alt="Bible cover" class="polygot__image--img">
@@ -308,6 +268,27 @@
             </div>
           </div>
 
+          <div class="polygot__card">
+            <img src="./src/images/polygotBible2.png" alt="Bible cover" class="polygot__image--img">
+            <div class="polygot__content">
+              <h3 class="polygot__subtitle">A Tool for Linguistic Scholars</h3>
+              <p class="polygot__text">The Polyglot Bible was not just a religious text, but a groundbreaking scholarly
+                tool that allowed linguists and scholars to compare the sacred scriptures in multiple languages. By
+                presenting the texts in Hebrew, Greek, and Latin side by side, Plantin’s work became an essential
+                reference for generations of scholars.</p>
+            </div>
+          </div>
+
+          <div class="polygot__card">
+            <img src="./src/images/polygotBible3.png" alt="Bible cover" class="polygot__image--img">
+            <div class="polygot__content">
+              <h3 class="polygot__subtitle">A Monument to Precision and Craftsmanship</h3>
+              <p class="polygot__text">Every detail of the Polyglot Bible was carefully crafted, from the choice of
+                paper to the ink used in the printing process. The result was a visually stunning and meticulously
+                accurate masterpiece. Its fine typography and detailed illustrations not only elevated the text, but
+                also set a new standard for printing craftsmanship during the Renaissance.</p>
+            </div>
+          </div>
         </div>
       </section>
     </div>
@@ -315,7 +296,15 @@
     <section class="info">
       <div class="info__animation">
         <div class="info__star">
-          <img class="info__star--img" src="./src/images/star.png" alt="star">
+          <svg class="info__star--img" width="203" height="216" viewBox="0 0 203 216" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M89.9098 0.703808L106.675 98.5142L194.048 66.6709L112.536 112.72L168.942 192.247L101.8 122.897L49.2876 203.891L89.3035 114.981L0.442842 85.5102L92.3162 99.9114L89.9098 0.703808Z"
+              fill="#EAC066" />
+            <path
+              d="M153.343 12.7504L111.946 103.603L202.604 124.263L108.782 118.653L110.687 215.672L94.0989 121.352L4.6182 160.653L88.1876 107.97L30.9807 35.2403L99.2176 97.0009L153.343 12.7504Z"
+              fill="#EAC066" />
+          </svg>
         </div>
         <h2 class="info__title">
           <span class="info__span">Hey</span>
@@ -324,34 +313,44 @@
           <span class="info__span">know</span>
         </h2>
         <div class="info__star">
-          <img class="info__star--img" src="./src/images/star.png" alt="star">
+          <svg class="info__star--img" width="203" height="216" viewBox="0 0 203 216" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M89.9098 0.703808L106.675 98.5142L194.048 66.6709L112.536 112.72L168.942 192.247L101.8 122.897L49.2876 203.891L89.3035 114.981L0.442842 85.5102L92.3162 99.9114L89.9098 0.703808Z"
+              fill="#EAC066" />
+            <path
+              d="M153.343 12.7504L111.946 103.603L202.604 124.263L108.782 118.653L110.687 215.672L94.0989 121.352L4.6182 160.653L88.1876 107.97L30.9807 35.2403L99.2176 97.0009L153.343 12.7504Z"
+              fill="#EAC066" />
+          </svg>
         </div>
       </div>
-      <div class="info__information">
+
+      <div class=" info__information">
         <div class="info__container">
           <div class="info__image">
-            <img sizes="(max-width: 674px) 100vw, 674px" srcset="
-            ./src/images/plantinInfo200.webp 200w,
-            ./src/images/plantinInfo674.webp 674w" src="./src/images/plantinInfo674.webp" alt="Plantin"
-              class="info__image--img">
+            <img sizes="(max-width: 674px) 100vw, 674px"
+              srcset="./src/images/plantinInfo200.webp 200w, ./src/images/plantinInfo674.webp 674w"
+              src="./src/images/plantinInfo674.webp" alt="Plantin" class="info__image--img">
           </div>
           <div class="info__content">
             <div class="info__speech">
-              <p class="info__speech--text">Did you know that the polygot Bible was printed in Herbrew, Greek, and
+              <p class="info__speech--text">Did you know that the polygot Bible was printed in Hebrew, Greek, and
                 Latin?
               </p>
             </div>
             <button class="info__listen">
-              <svg class="info__listen--svg" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision"
-                text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd"
-                clip-rule="evenodd" viewBox="0 0 512 422.274">
+              <svg class="info__listen--svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 422.274">
                 <path fill-rule="nonzero"
                   d="M56.333 98.8h112.324l92.906-93.608c6.885-6.886 18.027-6.941 24.908-.055 3.503 3.392 5.222 7.911 5.222 12.486h.056v386.951c0 9.737-7.907 17.699-17.704 17.699-4.95 0-9.414-2.042-12.644-5.328l-91.829-74.61H56.333c-15.495 0-29.594-6.345-39.766-16.516C6.345 315.648 0 301.553 0 286.058V155.129c0-15.495 6.345-29.59 16.517-39.757C27.104 104.78 41.342 98.8 56.333 98.8zm315.446 58.533c-2.888-8.637 1.77-17.991 10.407-20.879 8.638-2.888 17.991 1.77 20.879 10.407 5.684 16.877 8.425 43.075 7.967 67.988-.443 24.414-4.011 48.403-10.915 62.572-3.993 8.207-13.896 11.622-22.104 7.629-8.207-3.992-11.622-13.896-7.629-22.103 4.797-9.848 7.315-28.652 7.68-48.616.398-21.544-1.76-43.574-6.285-56.998zm85.304-61.708c-3.498-8.424.495-18.092 8.919-21.59 8.425-3.499 18.092.495 21.59 8.919 15.371 36.799 23.666 83.155 24.359 129.228.689 45.386-6.012 90.835-20.587 126.946-3.388 8.457-13.005 12.565-21.462 9.178-8.456-3.387-12.565-13.004-9.178-21.461 12.945-32.067 18.888-73.011 18.259-114.275-.633-41.914-8.087-83.88-21.9-116.945z" />
               </svg>
-              <span>press S to listen</span>
+              <span>Press H,G and L to listen</span>
             </button>
           </div>
         </div>
+
+        <audio id="audio-hebrew" src="./src/sound/hebrew.mp3" preload="auto"></audio>
+        <audio id="audio-greek" src="./src/sound/greek.mp3" preload="auto"></audio>
+        <audio id="audio-latin" src="./src/sound/latin.mp3" preload="auto"></audio>
         <div class="info__container">
           <div class="info__speech">
             <p class="info__speech--text">Yes! And it was so massive, it had eight volumes and required years of
@@ -366,42 +365,101 @@
           </div>
 
         </div>
-      </div>
-
-
-    </section>
-
-    <section class="garamond">
-      <div class="garamond__title">Crafting the perfect letters</div>
-      <div class="garamond__container">
-
-        <div class="garamond__content">
-          <h2>Heading</h2>
-          <p class="garamond__text">Plantin wasn’t just a printer, he was an artist. He worked with the best type
-            designers of his time, including Claude Garamond, to create fonts that were both beautiful and legible.
-            These fonts became the standard for generations and are still used today.</p>
-        </div>
-
-        <div class="garamond__image">
-          <img src="./src/images/garamond.png" alt="garamond">
-        </div>
 
       </div>
     </section>
+
+    <section class="moretus">
+      <h2 class="moretus__title">A partnership that shaped history</h2>
+      <div class="moretus__container">
+
+
+        <div class="moretus__content moretus__content--left">
+          <div class="moretus__card">
+            <div class="moretus__card--inner">
+
+
+              <div class="moretus__card--front">
+                <img class="moretus__card--image" sizes="(max-width: 1400px) 100vw, 1400px" srcset="
+                ./src/images/plantin2200.webp 200w,
+                ./src/images/plantin2974.webp 974w,
+                ./src/images/plantin21400.webp 1400w" src="./src/images/plantin21400.webp" alt="plantin">
+              </div>
+
+
+              <div class="moretus__card--back">
+                <p>Plantin’s success wasn’t a solo effort. His partnership with Jan Moretus, a multilingual scholar and
+                  entrepreneur, was crucial. Moretus worked his way up from assistant to Plantijn’s right-hand man,
+                  eventually taking over the workshop after Plantin’s death</p>
+              </div>
+
+            </div>
+          </div>
+          <button class="moretus__btn"><img class="moretus__btn--left" sizes="(max-width: 77px) 100vw, 77px" srcset="
+            ./src/images/arrow_dgebbx.webp 77w" src="./src/images/arrow_dgebbx.webp" alt="click icon"><span
+              class="moretus__btn--text">Click
+              Me</span></button>
+        </div>
+        <div class="moretus__content moretus__content--right">
+          <button class="moretus__btn"><img class="moretus__btn--right" sizes="(max-width: 77px) 100vw, 77px" srcset="
+            ./src/images/arrow_dgebbx.webp 77w" src="./src/images/arrow_dgebbx.webp" alt="click icon"><span
+              class="moretus__btn--text">Click
+              Me</span></button>
+          <div class="moretus__card">
+            <div class="moretus__card--inner">
+
+
+              <div class="moretus__card--front">
+                <img class="moretus__card--image" sizes="(max-width: 621px) 100vw, 621px" srcset="
+                ./src/images/moretusInfo200.webp 200w,
+                ./src/images/moretusInfo621.webp 621w" src="./src/images/moretusInfo621.webp" alt="moretus">
+              </div>
+
+
+              <div class="moretus__card--back">
+                <p>Together, Plantin and Moretus legacy that would last for centuries. Their dedication to innovation
+                  and quality made the Officina Plantiniana a model for future publishers.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
 
     <section class="descendents">
       <h2 class="descendents__title">Descendents of plantin </h2>
       <div class="descendents__image">
-        <img class="descendents__image--img" src="./src/images/descendents.png" alt="descendents plantin">
-        <div class="descendents__circle" style="top: 35%; left: 16%;" data-info="Info about person 1"></div>
-        <div class="descendents__circle" style="top: 45%; left: 5%;" data-info="Info about person 2"></div>
-        <div class="descendents__circle" style="top: 50%; right: 2%;" data-info="Info about person 3"></div>
-        <div class="descendents__circle" style="top: 32%; right: 1%;" data-info="Info about person 4"></div>
-        <div class="descendents__circle" style="top: 32%; right: 7%;" data-info="Info about person 5"></div>
-        <div class="descendents__circle" style="top: 32%; right: 15%;" data-info="Info about person 6"></div>
-        <div class="descendents__circle" style="top: 15%; right: 13%;" data-info="Info about person 7"></div>
-        <div class="descendents__circle" style="top: 15%; right: 6%;" data-info="Info about person 8"></div>
-        <div class="descendents__circle" style="top: 15%; right: 1%;" data-info="Info about person 9"></div>
+        <img class="descendents__image--img" sizes="(max-width: 1400px) 100vw, 1400px" srcset="
+        ./src/images/descendents200.webp 200w,
+        ./src/images/descendents864.webp 864w,
+        ./src/images/descendents886.webp 886w,
+        ./src/images/descendents1283.webp 1283w,
+        ./src/images/descendents1320.webp 1320w,
+        ./src/images/descendents1400.webp 1400w" src="./src/images/descendents1400.webp" alt="descendents plantin">
+        <div class="descendents__circle" style="top: 45%; left: 5%;"
+          data-info="Martinus Plantin, the only son of Christophe Plantin, died young and did not take part in his father’s renowned printing business. His early death left the legacy of the Plantin Press to be carried on by his sisters and their families, particularly Jan Moretus.">
+        </div>
+        <div class="descendents__circle" style="top: 50%; right: 2%;"
+          data-info="Magdalena Plantin (1564–1599) – Died young, leaving little historical record."></div>
+        <div class="descendents__circle" style="top: 32%; right: 1%;"
+          data-info="Martine Plantin (1550–1616) – Became a nun in a Carmelite convent."></div>
+        <div class="descendents__circle" style="top: 32%; right: 7%;"
+          data-info="Married Jan Moretus, who took over the family printing business after Plantin’s death."></div>
+        <div class="descendents__circle" style="top: 32%; right: 15%;"
+          data-info="Jeanne Rivière was the wife of Christophe Plantin, the famous 16th-century printer and founder of the Plantin Press in Antwerp. Together, they had several children, including six daughters, many of whom played a role in continuing their father’s printing legacy.">
+        </div>
+        <div class="descendents__circle" style="top: 15%; right: 13%;" data-info="Catharina Plantin (1554–1621) – Helped in the family business but had a less prominent role.
+        "></div>
+        <div class="descendents__circle" style="top: 15%; right: 6%;"
+          data-info="Henriette Plantin (1558–1594) – Married printer Frans Raphelengius, expanding the family's influence in publishing.">
+        </div>
+        <div class="descendents__circle" style="top: 15%; right: 1%;"
+          data-info="Justina Plantin (1566–1630) – Assisted with the business and correspondence, maintaining the family's printing network.">
+        </div>
 
       </div>
 
@@ -412,124 +470,161 @@
     </section>
 
 
-    <section class="moretus">
-      <h2 class="moretus__title">A partnership that shaped history</h2>
-      <div class="moretus__container">
-        <div class="moretus__content moretus__content--left">
-          <div class="moretus__card">
-            <img class="moretus__card--image" src="./src/images/plantin2.png" alt="plantin">
-            <div class="moretus__name">
-              <p><span>C</span>hristoph Plantin</p>
-            </div>
-          </div>
-          <button class="moretus__btn"><img class="moretus__btn--left" src="./src/images/arrow.png"
-              alt="click icon"><span class="moretus__btn--text">Click
-              Me</span></button>
-        </div>
-
-        <div class="moretus__content moretus__content--right">
-          <button class="moretus__btn"><span class="moretus__btn--text">Click
-              Me</span><img class="moretus__btn--right" src="./src/images/arrow.png" alt="click icon"></button>
-          <div class="moretus__card">
-            <img class="moretus__card--image" src="./src/images/moretus.png" alt="moretus">
-            <div class="moretus__name">
-              <p><span>J</span>an I Moretus</p>
-            </div>
-          </div>
-        </div>
-
-
-      </div>
-    </section>
-
     <section class="business">
       <h2 class="business__title">The woman who wove success</h2>
       <div class="business__container">
 
+
         <div class="business__card">
-          <div class="business__cover">
-            <img class="business__image" src="./src/images/Martina.png" alt="Martina">
-            <button class="business__btn"><img class="business__btn--img" src="./src/images/arrow.png"
-                alt="click icon"><span class="business__btn--text">Click
-                Me</span></button>
-          </div>
-          <div class="business__content">
-            <h2 class="business__time">1550-1616</h2>
-            <h3 class="business__subtitle">The Financial Anchor of the Plantin Empire</h3>
-            <p class="business__text">
-              Anna-Marie de Neuf played a pivotal role in maintaining and expanding the Plantin-business influence.
-              Through her strategic marriage to Balthasar business, she not only strengthened family alliances but also
-              actively supported the management of the printing house. Anna-Marie was instrumental in navigating the
-              complex social and political landscape of 17th-century Antwerp, ensuring the family's continued success.
-              Her sharp mind and keen diplomacy made her a bridge between tradition and progress during a transformative
-              era.
-            </p>
+          <div class="business__card--inner">
+
+            <div class="business__card--front">
+              <img class="business__image" sizes="(max-width: 483px) 100vw, 483px" srcset="
+              ./src/images/plantinMoretusCard200.webp 200w,
+              ./src/images/plantinMoretusCard455.webp 455w,
+              ./src/images/plantinMoretusCard483.webp 483w" src="./src/images/plantinMoretusCard483.webp"
+                alt="Front of the card">
+            </div>
+
+
+            <div class="business__card--back">
+              <img class="business__image" sizes="(max-width: 485px) 100vw, 485px" srcset="
+              ./src/images/Martina200.webp 200w,
+              ./src/images/Martina456.webp 456w,
+              ./src/images/Martina485.webp 485w" src="./src/images/Martina485.webp" alt="Martina">
+            </div>
           </div>
         </div>
 
-        <div class="business__card">
-          <div class="business__content">
-            <h2 class="business__time">1627-1691</h2>
-            <h3 class="business__subtitle">The Lace Visionary of Antwerp</h3>
-            <p class="business__text">Anna Goos brought innovation and diversification to the Plantin-business family.
-              Marrying into the household, she harnessed her entrepreneurial spirit to expand their influence into the
-              lucrative lace-making industry. Her leadership transformed lace production into a refined and profitable
-              art, bolstering the family’s fortune and ensuring their prominence in Antwerp society.</p>
-          </div>
 
-          <div class="business__cover">
-            <button class="business__btn"><img class="business__btn--img" src="./src/images/arrow.png"
-                alt="click icon"><span class="business__btn--text">Click
-                Me</span></button>
-            <img class="business__image" src="./src/images/Anna.png" alt="Anna">
-          </div>
+        <div class="business__text-content">
+          <h3 class="business__time">1550-1616</h3>
+          <h2 class="business__subtitle">Martina Plantin</h2>
 
-
+          <p class="business__text">
+            Martine, Christophe Plantin’s eldest daughter, became a crucial figure in the family’s affairs. While her
+            father focused on printing, Martine handled the workshop’s finances and bookbinding operations. Her
+            meticulous management helped stabilize the workshop during her father’s absences and after his death. She
+            also took charge of raising her siblings, becoming the glue that held the family together. </p>
         </div>
-
-        <div class="business__card">
-          <div class="business__cover">
-            <img class="business__image" src="./src/images/AnnaMarie.png" alt="AnnaMarie">
-            <button class="business__btn"><img class="business__btn--img" src="./src/images/arrow.png"
-                alt="click icon"><span class="business__btn--text">Click
-                Me</span></button>
-          </div>
-          <div class="business__content">
-            <h2 class="business__time">1624-1675</h2>
-            <h3 class="business__subtitle">The Strategic Bridge Builder</h3>
-            <p class="business__text">Anna-Marie de Neuf played a pivotal role in maintaining and expanding the
-              Plantin-Moretus influence. Through her strategic marriage to Balthasar Moretus, she not only strengthened
-              family alliances but also actively supported the management of the printing house. Anna-Marie was
-              instrumental in navigating the complex social and political landscape of 17th-century Antwerp, ensuring
-              the family's continued success. Her sharp mind and keen diplomacy made her a bridge between tradition and
-              progress during a transformative era.</p>
-            <button class="business__link">discover the lace connection</button>
-          </div>
-        </div>
-
-        <div class="business__card">
-
-          <div class="business__content">
-            <h2 class="business__time">1728-1797</h2>
-            <h3 class="business__subtitle">The Guardian of a Golden Legacy</h3>
-            <p class="business__text">As the last major figure to oversee the Plantin-Moretus printing house, Maria
-              Theresia Borrekens dedicated her life to preserving the family’s illustrious heritage. In an era when
-              printing was in decline, she maintained the workshop as a cultural beacon of Antwerp’s golden age. Her
-              determination ensured that the Plantin-Moretus legacy would endure for future generations.</p>
-
-          </div>
-
-          <div class="business__cover">
-            <button class="business__btn"><img class="business__btn--img" src="./src/images/arrow.png"
-                alt="click icon"><span class="
-                business__btn--text">Click
-                Me</span></button><img class="business__image" src="./src/images/Maria.png" alt="">
-          </div>
-
-        </div>
-
       </div>
+
+
+      <div class="business__container">
+
+
+        <div class="business__text-content">
+          <h2 class="business__time">1627-1691</h2>
+          <h3 class="business__subtitle">Anna Goos</h3>
+          <p class="business__text">
+            Anna Goos brought innovation and diversification to the Plantin-Moretus family. Marrying into the household,
+            she harnessed her entrepreneurial spirit to expand their influence into the lucrative lace-making industry.
+            Her leadership transformed lace production into a refined and profitable art, bolstering the family’s
+            fortune and ensuring their prominence in Antwerp society. </p>
+        </div>
+
+
+
+        <div class="business__card">
+          <div class="business__card--inner">
+
+            <div class="business__card--front">
+              <img class="business__image" sizes="(max-width: 483px) 100vw, 483px" srcset="
+              ./src/images/plantinMoretusCard200.webp 200w,
+              ./src/images/plantinMoretusCard455.webp 455w,
+              ./src/images/plantinMoretusCard483.webp 483w" src="./src/images/plantinMoretusCard483.webp"
+                alt="Front of the card">
+            </div>
+
+
+            <div class="business__card--back">
+              <img class="business__image" sizes="(max-width: 483px) 100vw, 483px" srcset="
+              ./src/images/Anna200.webp 200w,
+              ./src/images/Anna409.webp 409w,
+              ./src/images/Anna483.webp 483w" src="./src/images/Anna483.webp" alt="Anna">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="business__container">
+
+        <div class="business__card">
+          <div class="business__card--inner">
+
+            <div class="business__card--front">
+              <img class="business__image" sizes="(max-width: 483px) 100vw, 483px" srcset="
+              ./src/images/plantinMoretusCard200.webp 200w,
+              ./src/images/plantinMoretusCard455.webp 455w,
+              ./src/images/plantinMoretusCard483.webp 483w" src="./src/images/plantinMoretusCard483.webp"
+                alt="Front of the card">
+            </div>
+
+
+            <div class="business__card--back">
+              <img class="business__image" sizes="(max-width: 487px) 100vw, 487px" srcset="
+              ./src/images/AnnaMarie200.webp 200w,
+              ./src/images/AnnaMarie432.webp 432w,
+              ./src/images/AnnaMarie487.webp 487w" src="./src/images/AnnaMarie487.webp" alt="Anna-Marie">
+            </div>
+          </div>
+        </div>
+
+
+        <div class="business__text-content">
+          <h2 class="business__time">1624-1675</h2>
+          <h3 class="business__subtitle">Anna-Marie de Neuf</h3>
+          <p class="business__text">
+            Anna-Marie de Neuf played a pivotal role in maintaining and expanding the Plantin-Moretus influence. Through
+            her strategic marriage to Balthasar Moretus, she not only strengthened family alliances but also actively
+            supported the management of the printing house. Anna-Marie was instrumental in navigating the complex social
+            and political landscape of 17th-century Antwerp, ensuring the family's continued success. Her sharp mind and
+            keen diplomacy made her a bridge between tradition and progress during a transformative era. </p>
+          <button class="letter__btn">Discover the lace practice</button>
+        </div>
+      </div>
+
+
+      <div class="business__container">
+
+
+        <div class="business__text-content">
+          <h2 class="business__time">1728-1797</h2>
+          <h3 class="business__subtitle">Maria-Theresia Borrekens</h3>
+          <p class="business__text">
+            As the last major figure to oversee the Plantin-Moretus printing house, Maria Theresia Borrekens dedicated
+            her life to preserving the family’s illustrious heritage. In an era when printing was in decline, she
+            maintained the workshop as a cultural beacon of Antwerp’s golden age. Her determination ensured that the
+            Plantin-Moretus legacy would endure for future generations.</p>
+        </div>
+
+
+
+        <div class="business__card">
+          <div class="business__card--inner">
+
+            <div class="business__card--front">
+              <img class="business__image" sizes="(max-width: 483px) 100vw, 483px" srcset="
+              ./src/images/plantinMoretusCard200.webp 200w,
+              ./src/images/plantinMoretusCard455.webp 455w,
+              ./src/images/plantinMoretusCard483.webp 483w" src="./src/images/plantinMoretusCard483.webp"
+                alt="Front of the card">
+            </div>
+
+            <div class="business__card--back">
+              <img class="business__image" sizes="(max-width: 487px) 100vw, 487px" srcset="
+              ./src/images/Maria200.webp 200w,
+              ./src/images/Maria419.webp 419w,
+              ./src/images/Maria487.webp 487w" src="./src/images/Maria487.webp" alt="Maria">
+            </div>
+          </div>
+        </div>
+      </div>
+
     </section>
+
+
 
     <section class="legacy">
       <div class="legacy__container">
@@ -539,11 +634,15 @@
             Borrekens dedicated her life to preserving the family’s illustrious heritage. In an era when printing was in
             decline, she maintained the workshop as a cultural beacon of Antwerp’s golden age. Her determination ensured
             that the Plantin-Moretus legacy would endure for future generations.</p>
-          <button class="legacy__btn">visit the museum</button>
+          <button class="letter__btn">visit the museum</button>
         </div>
 
         <div class="legacy__image">
-          <img class="legacy__image--img" src="./src/images/legacy.png" alt="legacy">
+          <img class="legacy__image--img" sizes="(max-width: 583px) 100vw, 583px" srcset="
+          ./src/images/legacy200.webp 200w,
+          ./src/images/legacy428.webp 428w,
+          ./src/images/legacy548.webp 548w,
+          ./src/images/legacy583.webp 583w" src="./src/images/legacy583.webp" alt="legacy">
         </div>
       </div>
     </section>
@@ -556,9 +655,12 @@
 
         <span>Follow us</span>
         <div class="footer__icons">
-          <a href="#" class="footer__icons--icon"><img src="./src/images/facebook.png" alt="Facebook"></a>
-          <a href="#" class="footer__icons--icon"><img src="./src/images/instagram.png" alt="Instagram"></a>
-          <a href="#" class="footer__icons--icon"><img src="./src/images/youtube.png" alt="YouTube"></a>
+          <a href="https://www.facebook.com/museumplantinmoretus/?locale=nl_BE" class="footer__icons--icon"><img
+              src="./src/images/facebook.png" alt="Facebook"></a>
+          <a href="https://www.instagram.com/plantinmoretus/" class="footer__icons--icon"><img
+              src="./src/images/instagram.png" alt="Instagram"></a>
+          <a href="https://www.youtube.com/@PlantinMoretusmuseum" class="footer__icons--icon"><img
+              src="./src/images/youtube.png" alt="YouTube"></a>
         </div>
       </div>
     </div>
